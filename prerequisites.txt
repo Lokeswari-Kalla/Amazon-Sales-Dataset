@@ -1,0 +1,47 @@
+# Prerequisites for Data Cleaning and Transformation
+
+## Step 1: Import .csv file into Excel
+1. Open Excel.
+2. Go to `File` > `Open` and select the .csv file to import your data.
+
+## Step 2: Inspect and Clean the Data
+### Remove Duplicates
+- Navigate to the `Data` tab.
+- Click `Remove Duplicates` and follow the prompts to remove any duplicate entries.
+
+### Fix Special Characters
+- Open the `Find and Replace` dialog (Ctrl + H).
+- Replace `â‚¹` with an empty string.
+
+### Convert to Proper Data Types
+- **Price Columns** (`discounted_price`, `actual_price`): 
+  - Select the columns.
+  - Go to the `Home` tab > `Number` group and choose `Number`, set to 2 decimal places.
+- **Rating**:
+  - Select the column.
+  - Set to `Number` with 1 decimal place.
+- **Rating Count**:
+  - Select the column.
+  - Set to `Number` with 0 decimal places.
+
+### Handle Special and Unauthorized Characters
+- Replace any special unwanted characters (`ã€`) with an empty string.
+- Check for unauthorized symbols in the `rating` column and replace them with `0`.
+
+### Replace Commas with Semicolons
+- Use `Find and Replace` (Ctrl + H) to replace all commas `,` with semicolons `;`.
+
+### Fill or Remove Missing Data
+- Inspect each column for missing values.
+- Fill missing critical data appropriately or remove rows with missing essential data.
+
+## Step 3: Handle Multi-valued Cells
+- For columns containing multiple values separated by commas (e.g., `user_id`, `user_name`, `review_id`):
+  - Decide on handling approach: splitting into separate columns, normalizing into separate tables, or keeping as is.
+
+## Step 4: Save the Cleaned Data
+1. Save the cleaned data back to a .csv file.
+2. Ensure the file is ready for import into PostgreSQL for further analysis.
+
+## Step 5: Load Data into PostgreSQL
+1. Open PostgreSQL and use your preferred method (e.g., pgAdmin) to import the cleaned .csv file.
