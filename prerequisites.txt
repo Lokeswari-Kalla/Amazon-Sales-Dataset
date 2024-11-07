@@ -1,0 +1,35 @@
+# Prerequisites for Data Cleaning and Transformation
+
+  Step 1:
+  Import .csv file into Excel
+
+  Step 2:
+  Inspect and Clean the Data
+  Remove Duplicates
+  Fix Special Characters
+    -> Replace `â‚¹` with an empty string.
+  Convert to Proper Data Types
+    -> Price Columns (discounted_price, actual_price) set to 2 decimal places.
+    -> Rating column Set to 1 decimal place.
+    -> Rating Count Set to 0 decimal places.
+  Handle Special and Unauthorized Characters
+    -> Replace any special unwanted characters (`ã€`) with an empty string.
+    -> Check for unauthorized symbols in the 'rating' column and replace them with '0'.
+  Fill or Remove Missing Data
+    -> Inspect each column for missing values.
+    -> Fill missing critical data appropriately or remove rows with missing essential data.
+
+  Step 3: 
+  Handle Multi-valued Cells
+    -> For columns containing multiple values separated by commas (e.g., 'user_id', 'user_name', 'review_id'):
+   Replace Commas with Semicolons
+    -> replace all commas ',' with semicolons ';'.
+
+  Step 4:
+  Save the Cleaned Data
+    -> Save the cleaned data back to a .csv file.
+    -> Ensure the file is ready for import into PostgreSQL for further analysis.
+
+  Step 5:
+  Load Data into PostgreSQL
+    -> Open PostgreSQL and use your preferred method (e.g., pgAdmin) to import the cleaned .csv file.
