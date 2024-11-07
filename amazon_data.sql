@@ -60,6 +60,34 @@ UPDATE amazon_data
 SET actual_price = NULL 
 WHERE rating < 1;
 
+---6. Average, Minimum, and Maximum Prices by Category---
+SELECT category, 
+ROUND(AVG(actual_price),2) AS avg_price, 
+MIN(actual_price) AS min_price, 
+MAX(actual_price) AS max_price 
+FROM amazon_data 
+GROUP BY category;
+
+---7. Top 10 Most Popular Products by Rating Count---
+SELECT product_name, rating_count 
+FROM amazon_data
+WHERE rating_count IS NOT NULL
+ORDER BY rating_count DESC
+LIMIT 10;
+
+---8. Average Discount by Category---
+SELECT category, 
+AVG(CAST(REPLACE(discount_percentage, '%', '') AS FLOAT)) AS avg_discount 
+FROM amazon_data 
+GROUP BY category 
+ORDER BY avg_discount DESC;
+
+---9. Correlation Between Discounts and Ratings---
+SELECT discount_percentage, ROUND(AVG(rating),2) AS avg_rating 
+FROM amazon_data 
+GROUP BY discount_percentage 
+ORDER BY discount_percentage DESC;
+
 #### --Step 5: Data Cleaning and Transformation
 --- 1. Remove Duplicates ---
 SELECT *, COUNT(*) 
