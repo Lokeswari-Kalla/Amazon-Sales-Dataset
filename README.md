@@ -1,6 +1,7 @@
 # 🛒Amazon Product Data Analysis
+<p align="center"> <img width="900" height="500" src="https://github.com/user-attachments/assets/82349c64-ff50-4a53-acde-4536f2534bbc"> </p>
 
-![image](https://github.com/user-attachments/assets/0d21e6c9-4f8d-4d30-a44b-1ecf9d391480)
+
 <br/>
 <br/>
 This project leverages SQL to conduct a comprehensive analysis of an Amazon product dataset, containing details on product specifications, pricing, discounts, customer reviews, and user ratings. Through this analysis, I aim to uncover insights into product performance, customer preferences, and pricing strategies that can enhance sales and customer satisfaction.
